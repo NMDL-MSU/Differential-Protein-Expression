@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=02:00:00
+#SBATCH --mem=5G
+#SBATCH -C intel18
+#SBATCH -J Summary_Results
+#SBATCH -o Summary_Results.o%j
+
+#=====================================================================
+# This script runs: Summary_Results.R
+# Submited on: Tue Dec 4 11:16:28 EST 2018
+#=====================================================================
+
+# Work Directory
+cd /mnt/research/NMDL/KER_Glycogen_and_RER_Thoroughbred/Proteomics/Glycogen_Kennedy_20180622/AnnotateProteins/PermutationTest/Summary_Results
+
+# Run R Code
+R -e 'library("knitr");knitr::spin ("Summary_Results.R")'
+
+# Add metadata to md file
+cat .metadata Summary_Results.md > tmp; mv tmp Summary_Results.md
+
+# Render HTML
+R -e 'library("prettydoc");rmarkdown::render ("Summary_Results.md")'
+
+# Job Details
+echo Job Details
+scontrol show job $SLURM_JOB_ID
