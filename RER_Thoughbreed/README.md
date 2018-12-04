@@ -1,4 +1,4 @@
-# Differential-Gene-Expression
+# Differential-Protein-Expression
 ## Project RER Thoroughbred
 
 **Underlying Cause for Recurrent Exertional Rhabdomyolysis (RER)**
