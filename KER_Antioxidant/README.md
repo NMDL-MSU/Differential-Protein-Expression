@@ -16,5 +16,8 @@ Differentially expressed protein between horses on treatments diet and control d
 #### &nbsp;&nbsp;&nbsp;&nbsp;DE Analysis:
 The scripts used to generate the summary tables of the permutation test can be viewed in detail [here](https://htmlpreview.github.io/?https://github.com/NMDL-MSU/Differential-Protein-Expression/blob/master/KER_Antioxidant/Permutation_Test/Summary_Results.html).
 
+#### &nbsp;&nbsp;&nbsp;&nbsp;Pathway Enrichment Analysis:
+The scripts used to for the enrichment analysis can be viewed in detail [here](https://htmlpreview.github.io/?https://github.com/NMDL-MSU/Differential-Protein-Expression/blob/master/KER_Antioxidant/Enrichment/KER_Antioxidant.html).
+
 #### &nbsp;&nbsp;&nbsp;&nbsp;DE Results:
-The DE results for all comparisons can be downloaded [here](https://github.com/NMDL-MSU/Differential-Protein-Expression/blob/master/KER_Antioxidant/Permutation_Test/Summary_Results_KER_antioxidant.xlsx?raw=true).
+The DE and enrichment results can be downloaded [here](https://github.com/NMDL-MSU/Differential-Protein-Expression/blob/master/KER_Antioxidant/Permutation_Test/Summary_Results_KER_antioxidant.xlsx?raw=true).
