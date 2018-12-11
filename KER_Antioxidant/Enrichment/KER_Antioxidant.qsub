@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=03:00:00
+#SBATCH --mem=50G
+#SBATCH -C intel18
+#SBATCH -J KER_Antioxidant
+#SBATCH -o KER_Antioxidant.o%j
+
+#=====================================================================
+# This script runs: KER_Antioxidant.R
+# Submited on: Tue Dec 11 10:26:50 EST 2018
+#=====================================================================
+
+# Work Directory
+cd /mnt/research/NMDL/KER_Glycogen_and_RER_Thoroughbred/Proteomics/Enrichment/KER_Antioxidant
+
+# Run R Code
+R -e 'library("knitr");knitr::spin ("KER_Antioxidant.R")'
+
+# Add metadata to md file
+cat .metadata KER_Antioxidant.md > tmp; mv tmp KER_Antioxidant.md
+
+# Render HTML
+R -e 'library("prettydoc");rmarkdown::render ("KER_Antioxidant.md")'
+
+# Job Details
+echo Job Details
+scontrol show job $SLURM_JOB_ID
